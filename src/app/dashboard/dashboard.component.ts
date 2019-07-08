@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   valor: String = '4.500';
   public textoInicial: string;
+  public tableData: TableData;
+  public listado: Incindencias[];
+  public dialogResult: any;
 
   showSwal(type) {
     if (type == 'basic') {
@@ -140,9 +143,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   // constructor(private navbarTitleService: NavbarTitleService, private notificationService: NotificationService) { }
-  public tableData: TableData;
-  public listado: Incindencias[];
-  public dialogResult: any;
 
   startAnimationForLineChart(chart: any) {
       let seq: any, delays: any, durations: any;
