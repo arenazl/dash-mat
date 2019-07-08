@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { MatDialog } from '@angular/material';
+import { ChildComponent } from './child/child.component';
 
 @Component({
     selector: 'app-my-app',

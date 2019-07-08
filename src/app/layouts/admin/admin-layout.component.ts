@@ -6,7 +6,6 @@ import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from 
 import 'rxjs/add/operator/filter';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import PerfectScrollbar from 'perfect-scrollbar';
-import { TestDialogComponent } from '../../dialog/test-dialog/test-dialog.component';
 
 declare const $: any;
 

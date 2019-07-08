@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { TableData } from '../md/md-table/md-table.component';
 import { LegendItem, ChartType } from '../md/md-chart/md-chart.component';
 import { DatasourceService } from '../services/datasource.service';
@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 import swal from 'sweetalert2';
 import * as Chartist from 'chartist';
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { TestDialogComponent } from './../dialog/test-dialog/test-dialog.component';
 
 declare const $: any;
 
@@ -18,6 +17,7 @@ declare const $: any;
 export class DashboardComponent implements OnInit, AfterViewInit {
 
   valor: String = '4.500';
+  public textoInicial: string;
 
   showSwal(type) {
     if (type == 'basic') {
@@ -203,7 +203,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   public ngOnInit() {
 
-      this.data_api.getIncidencias().subscribe(data => this.listado = data);
+      const lista = this.data_api.getIncidencias().subscribe(data => this.listado = data);
+
+      // lista.forEach(q => q.forEach( a => console.log(a.estado_desc)));
 
       this.tableData = {
           headerRow: ['ID', 'Name', 'Salary', 'Country', 'City'],
@@ -318,6 +320,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
          }
       });
    }
+
+   displayRef(ref){
+      this.textoInicial = 'vengo de mi padre';
+       console.log(ref as ElementRef);
+  }
+
    ngAfterViewInit() {
        const breakCards = true;
        if (breakCards === true) {

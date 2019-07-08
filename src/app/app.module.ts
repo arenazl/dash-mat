@@ -85,7 +85,7 @@ import { DatasourceService } from './services/datasource.service';
     MatToolbarModule,
     MatTooltipModule,
     HttpClientModule,
-  ]
+  ],
 })
 export class MaterialModule {}
 
@@ -107,7 +107,7 @@ export class MaterialModule {}
     declarations: [
         AppComponent,
         AdminLayoutComponent,
-        AuthLayoutComponent,
+        AuthLayoutComponent
      ],
     entryComponents: [],
     providers: [ DatasourceService],
