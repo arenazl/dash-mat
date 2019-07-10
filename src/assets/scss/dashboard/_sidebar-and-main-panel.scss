@@ -11,9 +11,9 @@
     left: 0;
     z-index: 2;
     width: 260px;
-    background: $white-color;
+    background: $grey-color;
     @include shadow-big();
-
+    
     .logo-img{
         width: 42px;
         max-height: 42px;
@@ -382,6 +382,13 @@
     }
     &[data-background-color="red"]{
         @include sidebar-background-color($gray-base, $white-color);
+
+        .nav li .dropdown-menu .dropdown-item{
+          color: $white-color;
+        }
+    }
+    &[data-background-color="grey"]{
+        @include sidebar-background-color(gray, $white-color);
 
         .nav li .dropdown-menu .dropdown-item{
           color: $white-color;

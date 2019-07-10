@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
 import { TableData } from '../md/md-table/md-table.component';
 import { LegendItem, ChartType } from '../md/md-chart/md-chart.component';
 import { DatasourceService } from '../services/datasource.service';
@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import swal from 'sweetalert2';
 import * as Chartist from 'chartist';
 import { MatDialog, MatDialogRef } from '@angular/material';
+import { Input } from '@angular/core';
+import * as $$ from 'jQuery';
 
 declare const $: any;
 
@@ -20,9 +22,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   public textoInicial: string;
   public tableData: TableData;
   public listado: Incindencias[];
-  public dialogResult: any;
+  public dialogResult: any
+  @Input() firstName: String  = 'hola lucas';
+  @ViewChild('pRef', {static: false}) pRef: ElementRef;
 
-  showSwal(type) {
+  showSwal(type) { 
     if (type == 'basic') {
         swal({
             title: "Here's a message!",
@@ -141,9 +145,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         }).catch(swal.noop)
     }
   }
-
-  // constructor(private navbarTitleService: NavbarTitleService, private notificationService: NotificationService) { }
-
   startAnimationForLineChart(chart: any) {
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -199,6 +200,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
       seq2 = 0;
   }
+
   constructor(private data_api: DatasourceService) { }
 
   public ngOnInit() {
@@ -321,12 +323,20 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       });
    }
 
-   displayRef(ref){
+   public tryJquery()
+   {
+     $$('#rowToogle').toggle('slow');
+   }
+
+   displayRef(name: HTMLHeadingElement) {
       this.textoInicial = 'vengo de mi padre';
-       console.log(ref as ElementRef);
+    console.log(( < HTMLHeadingElement > name).innerHTML);
   }
 
    ngAfterViewInit() {
+
+      console.log(this.pRef.nativeElement.innerHTML);
+
        const breakCards = true;
        if (breakCards === true) {
            // We break the cards headers if there is too much stress on them :-)

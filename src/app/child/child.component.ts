@@ -7,18 +7,15 @@ import { Component, OnInit, AfterViewInit, ViewChild, EventEmitter, Output, Elem
 })
 export class ChildComponent implements OnInit {
 
-  @ViewChild ('buttonRef', null) buttonRef;
   @Output() pass2Parent = new EventEmitter();
-
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  getElement()
-  {
-    this.pass2Parent.emit((this.buttonRef as ElementRef));
-  }
+  getElement(ref: HTMLHeadingElement) {
+    this.pass2Parent.emit(ref);
+  };
 
 }

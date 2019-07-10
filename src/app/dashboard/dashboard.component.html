@@ -1,21 +1,35 @@
 <div class="main-content">
     <div class="container-fluid">
 
+        <div class="row">
+            <div class="col-md-6">
+            <p #pRef>
+                Start editing to see some magic happen :)
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p><app-delete></app-delete></p> 
+            </div>         
+        </div>
+
       <div class="row">
-          <div class="col-md-3">
-            <h3>{{ textoInicial }}</h3>
-              <button click="onclick()">click here</button>
-          </div>
-          <div class="col-md-3">
+          <button (click)="tryJquery()" class="mat-raised-button">jquery</button>
+      </div>
+     
+      <div id="rowToogle" class="row">
+          <div class="col-md-6 ml-auto mr-auto text-center">
+              <h3>{{ textoInicial }}</h3>
+
+              <input [value]="firstName">
+
               <app-child (pass2Parent)='displayRef($event)'></app-child>
           </div>       
       </div>
-
-      
+    
       <div class="row">
           <div class="col-md-6">
               <div class="card">
-                  <div class="card-body">
+                  <div class="card-body text-center">
                       <h5>A warning message, with a "Confirm" Button...</h5>
                       <button mat-raised-button class="btn btn-rose btn-fill" (click)="this.showSwal('warning-message-and-confirmation')">Try me!</button>
                   </div>
