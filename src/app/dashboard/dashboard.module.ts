@@ -8,7 +8,6 @@ import { MaterialModule } from '../app.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { ChildComponent } from './../child/child.component';
-import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
     imports: [
@@ -18,7 +17,7 @@ import { DeleteComponent } from './delete/delete.component';
         MdModule,
         MaterialModule
     ],
-    declarations: [DashboardComponent, ChildComponent, DeleteComponent]
+    declarations: [DashboardComponent, ChildComponent]
 })
 
 export class DashboardModule {}
