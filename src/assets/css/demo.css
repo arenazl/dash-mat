@@ -73,3 +73,26 @@
         position: absolute;
     }
 }
+
+#i.active
+{
+    background: linear-gradient(60deg, #00bcd4, #00bcd4)!important;
+}
+
+#p.active
+{
+    background: linear-gradient(60deg, #e8433f,#e8433f)!important;
+}
+
+#r.active
+{
+    background: linear-gradient(60deg, #4caf50, #4caf50)!important;
+}
+
+.sidebar .logo-img img {
+    width: 30px !important;
+    top: 21px !important;
+    left: 23px !important;
+    opacity: 0.8 !important;
+    position: absolute;
+}

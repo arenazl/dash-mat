@@ -112,7 +112,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ////////////////// TABLE INCIDENTES CON TABS /////////////////////
 
  // tabla 1 //
- const lstIncidencias = new Array<Array<string>>();
+
+const lstIncidencias = new Array<Array<string>>();
  let item = new Array<string>();
 
    this.data_api.getIncidenciasP().subscribe((data) => {
@@ -126,6 +127,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
        lstIncidencias.push(item);
        }
      );
+
       this.dataTable = {
         headerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
         footerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
@@ -134,7 +136,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
    });
 
   // tabla 2 //
-  const lstIncidencias2 = new Array<Array<string>>();
+
+  const lstIncidencias2 = new Array<Array<string>>()
 
     this.data_api.getIncidenciasR().subscribe((data) => {
 
@@ -143,10 +146,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         item.push(value.id_incidencia.toString());
         item.push(value.estado_desc.toString());
         item.push(value.grupo_desc.toString());
+        item.push(value.resumen.toString());
         item.push(value.usuario_asignado.toString());
         lstIncidencias2.push(item);
         }
       );
+
       this.dataTable2 = {
         headerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
         footerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
@@ -155,7 +160,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     });
 
   // tabla 2 //
-
   const lstIncidencias3 = new Array<Array<string>>();
 
   this.data_api.getIncidenciasC().subscribe((data) => {
@@ -165,9 +169,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         item.push(value.id_incidencia.toString());
         item.push(value.estado_desc.toString());
         item.push(value.grupo_desc.toString());
+        item.push(value.resumen.toString());
         item.push(value.usuario_asignado.toString());
         lstIncidencias3.push(item);
         });
+
         this.dataTable3 = {
           headerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
           footerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
@@ -279,36 +285,27 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
   });
 
-  const table = $('#datatables').dataTable();
+  $('.card .material-datatables label').addClass('form-group');
 
-    $('#datatables2').dataTable({
-      "pagingType": "full_numbers",
-      "lengthMenu": [
-        [10, 25, 50, -1],
-        [10, 25, 50, "All"]
-      ],
-      responsive: true,
-      language: {
-        search: "_INPUT_",
-        searchPlaceholder: "Search records",
-      }
-    });
+   // Edit record
+   $$('#datatables').on('click', function(e) {
 
-    $('#datatables3').dataTable({
-      "pagingType": "full_numbers",
-      "lengthMenu": [
-        [10, 25, 50, -1],
-        [10, 25, 50, "All"]
-      ],
-      responsive: true,
-      language: {
-        search: "_INPUT_",
-        searchPlaceholder: "Search records",
-      }
-    });
+    $$('#table').removeClass('col-md-12');
+    $$('#table').addClass('col-md-8');
 
-    $('.card .material-datatables label').addClass('form-group');
+    $$('#timeline').removeClass('d-none');
+    $$('#timeline').addClass('col-md-4');
 
-   }
+   });
+
+     // Edit record
+     $$('#close').on('click', function(e) {
+
+      $$('#table').addClass('col-md-12');
+      $$('#timeline').addClass('d-none');
+     });
 }
+
+}
+
 

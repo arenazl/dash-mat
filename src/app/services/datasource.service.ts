@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Incindencias, RendimientoByGrupo, IncidenciasAnual } from '../model/Incidencia';
 import { Observable } from 'rxjs';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
-import { DataTableComponent, DataTable } from '../tables/datatable.net/datatable.component';
 
 @Injectable({
   providedIn: 'root'

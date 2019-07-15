@@ -8,7 +8,6 @@ import { MaterialModule } from '../app.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { ChildComponent } from './../child/child.component';
-import { DataTableComponent } from './../tables/datatable.net/datatable.component';
 
 @NgModule({
     imports: [
@@ -18,7 +17,7 @@ import { DataTableComponent } from './../tables/datatable.net/datatable.componen
         MdModule,
         MaterialModule
     ],
-    declarations: [DashboardComponent, ChildComponent, DataTableComponent]
+    declarations: [DashboardComponent, ChildComponent]
 })
 
 export class DashboardModule {}
