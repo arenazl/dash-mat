@@ -20,10 +20,10 @@ export interface ChildrenItems {
     type?: string;
 }
 
-//Menu Items
+//MenuItems
 export const ROUTES: RouteInfo[] = [{
         path: '/dashboard',
-        title: 'Dashboard',
+        title: 'Incidencias',
         type: 'link',
         icontype: 'dashboard'
     },{

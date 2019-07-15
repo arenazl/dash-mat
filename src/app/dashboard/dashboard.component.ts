@@ -2,13 +2,15 @@ import { Component, OnInit, AfterViewInit, ElementRef, ViewChild} from '@angular
 import { TableData } from '../md/md-table/md-table.component';
 import { LegendItem, ChartType } from '../md/md-chart/md-chart.component';
 import { DatasourceService } from '../services/datasource.service';
-import { Incindencias } from './../model/Incidencia';
+import { Incindencias, RendimientoByGrupo, IncidenciasAnual } from '../model/Incidencia';
 import { Observable } from 'rxjs';
 import swal from 'sweetalert2';
 import * as Chartist from 'chartist';
+import {ChartsComponent} from '../charts/charts.component';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { Input } from '@angular/core';
 import * as $$ from 'jQuery';
+import { DataTable } from './../tables/datatable.net/datatable.component';
 
 declare const $: any;
 
@@ -18,351 +20,295 @@ declare const $: any;
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
 
-  valor: String = '4.500';
-  public textoInicial: string;
-  public tableData: TableData;
-  public listado: Incindencias[];
-  public dialogResult: any
-  @Input() firstName: String  = 'hola lucas';
-  @ViewChild('pRef', {static: false}) pRef: ElementRef;
+  public tableData: TableData; // charts
+  public dataTable: DataTable; // pendientes
+  public dataTable2: DataTable; // resueltos
+  public dataTable3: DataTable; // ingresados
 
-  showSwal(type) { 
-    if (type == 'basic') {
-        swal({
-            title: "Here's a message!",
-            buttonsStyling: false,
-            confirmButtonClass: "btn btn-success"
-        }).catch(swal.noop)
+  ////////////////// FX CHARTS /////////////////////
 
-    } else if (type == 'title-and-text') {
-        swal({
-            title: "Here's a message!",
-            text: "It's pretty, isn't it?",
-            buttonsStyling: false,
-            confirmButtonClass: "btn btn-info"
-        }).catch(swal.noop)
-
-    } else if (type == 'success-message') {
-        swal({
-            title: "Good job!",
-            text: "You clicked the button!",
-            buttonsStyling: false,
-            confirmButtonClass: "btn btn-success",
-            type: "success"
-        }).catch(swal.noop)
-
-    } else if (type == 'warning-message-and-confirmation') {
-        swal({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonClass: 'btn btn-success',
-          cancelButtonClass: 'btn btn-danger',
-          confirmButtonText: 'Yes, delete it!',
-           buttonsStyling: false
-        }).then((result) => {
-          if (result.value) {
-            swal(
-              {
-                title: 'Deleted!',
-                text: 'Your file has been deleted.',
-                type: 'success',
-                confirmButtonClass: "btn btn-success",
-                buttonsStyling: false
-              }
-            )
-          }
-        })
-    } else if (type == 'warning-message-and-cancel') {
-        swal({
-            title: 'Are you sure?',
-            text: 'You will not be able to recover this imaginary file!',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, keep it',
-            confirmButtonClass: "btn btn-success",
-            cancelButtonClass: "btn btn-danger",
-            buttonsStyling: false
-        }).then((result) => {
-          if (result.value) {
-            swal({
-                title: 'Deleted!',
-                text: 'Your imaginary file has been deleted.',
-                type: 'success',
-                confirmButtonClass: "btn btn-success",
-                buttonsStyling: false
-            }).catch(swal.noop)
-          } else {
-            swal({
-                title: 'Cancelled',
-                text: 'Your imaginary file is safe :)',
-                type: 'error',
-                confirmButtonClass: "btn btn-info",
-                buttonsStyling: false
-            }).catch(swal.noop)
-          }
-        })
-
-    } else if (type == 'custom-html') {
-        swal({
-            title: 'HTML example',
-            buttonsStyling: false,
-            confirmButtonClass: "btn btn-success",
-            html: 'You can use <b>bold text</b>, ' +
-                '<a href="http://github.com">links</a> ' +
-                'and other HTML tags'
-        }).catch(swal.noop)
-
-    } else if (type == 'auto-close') {
-        swal({
-            title: "Auto close alert!",
-            text: "I will close in 2 seconds.",
-            timer: 2000,
-            showConfirmButton: false
-        }).catch(swal.noop)
-    } else if (type == 'input-field') {
-        swal({
-            title: 'Input something',
-            html: '<div class="form-group">' +
-                '<input id="input-field" type="text" class="form-control" />' +
-                '</div>',
-            showCancelButton: true,
-            confirmButtonClass: 'btn btn-success',
-            cancelButtonClass: 'btn btn-danger',
-            buttonsStyling: false
-        }).then(function(result) {
-            swal({
-                type: 'success',
-                html: 'You entered: <strong>' +
-                    $('#input-field').val() +
-                    '</strong>',
-                confirmButtonClass: 'btn btn-success',
-                buttonsStyling: false
-
-            })
-        }).catch(swal.noop)
-    }
-  }
-  startAnimationForLineChart(chart: any) {
-      let seq: any, delays: any, durations: any;
-      seq = 0;
-      delays = 80;
-      durations = 500;
-      chart.on('draw', function(data: any) {
-
-        if (data.type === 'line' || data.type === 'area') {
-          data.element.animate({
-            d: {
-              begin: 600,
-              dur: 700,
-              from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-              to: data.path.clone().stringify(),
-              easing: Chartist.Svg.Easing.easeOutQuint
-            }
-          });
-        } else if (data.type === 'point') {
-              seq++;
-              data.element.animate({
-                opacity: {
-                  begin: seq * delays,
-                  dur: durations,
-                  from: 0,
-                  to: 1,
-                  easing: 'ease'
-                }
-              });
-          }
-      });
-
-      seq = 0;
-  }
-  startAnimationForBarChart(chart: any) {
-      let seq2: any, delays2: any, durations2: any;
-      seq2 = 0;
-      delays2 = 80;
-      durations2 = 500;
-      chart.on('draw', function(data: any) {
-        if (data.type === 'bar') {
-            seq2++;
-            data.element.animate({
-              opacity: {
-                begin: seq2 * delays2,
-                dur: durations2,
-                from: 0,
-                to: 1,
-                easing: 'ease'
-              }
-            });
-        }
-      });
-
-      seq2 = 0;
-  }
+  chartFX = new ChartsComponent();
 
   constructor(private data_api: DatasourceService) { }
 
   public ngOnInit() {
 
-      const lista = this.data_api.getIncidencias().subscribe(data => this.listado = data);
+  ////////////////// SIMPLE BAR CHART POR OFICINA Agil /////////////////////
 
-      // lista.forEach(q => q.forEach( a => console.log(a.estado_desc)));
+    const lstGrupos = Array<string>();
+    const lstCant = new Array<Array<number>>();
+    let line = new Array<number>();
+    let dataSimpleBarChart: any;
 
-      this.tableData = {
-          headerRow: ['ID', 'Name', 'Salary', 'Country', 'City'],
-          dataRows: [
-              ['US', 'USA', '2.920	', '53.23%'],
-              ['DE', 'Germany', '1.300', '20.43%'],
-              ['AU', 'Australia', '760', '10.35%'],
-              ['GB', 'United Kingdom	', '690', '7.87%'],
-              ['RO', 'Romania', '600', '5.94%'],
-              ['BR', 'Brasil', '550', '4.34%']
-          ]
-       };
-      /* ----------==========     Daily Sales Chart initialization    ==========---------- */
+    const optionsSimpleBarChart = {
+      seriesBarDistance: 10,
+      axisX: {
+        showGrid: false
+      }
+    };
 
-      const dataDailySalesChart = {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-              [12, 17, 7, 17, 23, 18, 38]
-          ]
-      };
-
-     const optionsDailySalesChart = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 0
-          }),
-          low: 0,
-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-      };
-
-      const dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-      this.startAnimationForLineChart(dailySalesChart);
-      /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
-      const dataCompletedTasksChart = {
-          labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
-          series: [
-              [230, 750, 450, 300, 280, 240, 200, 190]
-          ]
-      };
-
-      const optionsCompletedTasksChart = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 0
-          }),
-          low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better
-          // look
-          chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
-      };
-
-     const completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart,
-      optionsCompletedTasksChart);
-
-     this.startAnimationForLineChart(completedTasksChart);
-
-      /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
-      const dataWebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-        series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-        ]
-      };
-      const optionsWebsiteViewsChart = {
-          axisX: {
-              showGrid: false
-          },
-          low: 0,
-          high: 1000,
-          chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
-      };
-      const responsiveOptions: any = [
-        ['screen and (max-width: 640px)', {
-          seriesBarDistance: 5,
-          axisX: {
-            labelInterpolationFnc: function (value) {
-              return value[0];
-            }
+    const responsiveOptionsSimpleBarChart: any = [
+      ['screen and (max-width: 640px)', {
+        seriesBarDistance: 5,
+        axisX: {
+          labelInterpolationFnc: function (value: any) {
+            return value[0];
           }
-        }]
-      ];
-      const websiteViewsChart = new Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
+        }
+      }]
+    ];
 
-      this.startAnimationForBarChart(websiteViewsChart);
+    this.data_api.getIncidenciasByOfficeA().subscribe((data) => {
+      data.forEach(function (value, index) {
+          line.push(value.cant);
+          lstGrupos.push(value.grupo_desc);
+        }
+      );
+      lstCant.push(line);
 
-      $('#worldMap').vectorMap({
-        map: 'world_en',
-        backgroundColor: 'transparent',
-         borderColor: '#818181',
-         borderOpacity: 0.25,
-         borderWidth: 1,
-         color: '#b3b3b3',
-         enableZoom: true,
-         hoverColor: '#eee',
-         hoverOpacity: null,
-         normalizeFunction: 'linear',
-         scaleColors: ['#b6d6ff', '#005ace'],
-         selectedColor: '#c9dfaf',
-         selectedRegions: null,
-         showTooltip: true,
-         onRegionClick: function(element, code, region)
-         {
-             var message = 'You clicked "'
-                 + region
-                 + '" which has the code: '
-                 + code.toUpperCase();
+      dataSimpleBarChart = {
+        labels: lstGrupos,
+        series: lstCant
+      };
 
-             alert(message);
-         }
+      console.log(lstCant);
+
+      const simpleBarChart = new Chartist.Bar('#simpleBarChart', dataSimpleBarChart, optionsSimpleBarChart,
+        responsiveOptionsSimpleBarChart);
+
+      // start animation or the Emails Chart
+      this.chartFX.startAnimationForBarChart(simpleBarChart);
+    });
+
+      ////////////////// SIMPLE BAR CHART POR OFICINA Mant. /////////////////////
+
+    const lstGrupos2 = Array<string>();
+    const lstCant2 = new Array<Array<number>>();
+    const line2 = new Array<number>();
+    let dataSimpleBarChart2: any;
+
+    this.data_api.getIncidenciasByOfficeM().subscribe((data) => {
+      data.forEach(function (value, index) {
+        line2.push(value.cant);
+        lstGrupos2.push(value.grupo_desc);
+        }
+      );
+      lstCant2.push(line2);
+
+      dataSimpleBarChart2 = {
+        labels: lstGrupos2,
+        series: lstCant2
+      };
+
+      console.log(lstCant2);
+
+      const simpleBarChart2 = new Chartist.Bar('#simpleBarChart2', dataSimpleBarChart2, optionsSimpleBarChart,
+        responsiveOptionsSimpleBarChart);
+
+      // start animation or the Emails Chart
+      this.chartFX.startAnimationForBarChart(simpleBarChart2);
+    });
+
+  ////////////////// TABLE INCIDENTES CON TABS /////////////////////
+
+ // tabla 1 //
+ const lstIncidencias = new Array<Array<string>>();
+ let item = new Array<string>();
+
+   this.data_api.getIncidenciasP().subscribe((data) => {
+     data.forEach(function (value, index) {
+       item = [];
+       item.push(value.id_incidencia.toString());
+       item.push(value.estado_desc.toString());
+       item.push(value.grupo_desc.toString());
+       item.push(value.resumen.toString());
+       item.push(value.usuario_asignado.toString());
+       lstIncidencias.push(item);
+       }
+     );
+      this.dataTable = {
+        headerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
+        footerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
+        dataRows: lstIncidencias
+      };
+   });
+
+  // tabla 2 //
+  const lstIncidencias2 = new Array<Array<string>>();
+
+    this.data_api.getIncidenciasR().subscribe((data) => {
+
+      data.forEach(function (value, index) {
+        item = [];
+        item.push(value.id_incidencia.toString());
+        item.push(value.estado_desc.toString());
+        item.push(value.grupo_desc.toString());
+        item.push(value.usuario_asignado.toString());
+        lstIncidencias2.push(item);
+        }
+      );
+      this.dataTable2 = {
+        headerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
+        footerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
+        dataRows: lstIncidencias2
+       };
+    });
+
+  // tabla 2 //
+
+  const lstIncidencias3 = new Array<Array<string>>();
+
+  this.data_api.getIncidenciasC().subscribe((data) => {
+
+      data.forEach(function (value, index) {
+        item = [];
+        item.push(value.id_incidencia.toString());
+        item.push(value.estado_desc.toString());
+        item.push(value.grupo_desc.toString());
+        item.push(value.usuario_asignado.toString());
+        lstIncidencias3.push(item);
+        });
+        this.dataTable3 = {
+          headerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
+          footerRow: [ 'Nro', 'Estado', 'Grupo', 'Resumen' , 'Usuario' ],
+          dataRows: lstIncidencias3
+       };
+    });
+
+  /***************** MULTI CHARTS - VISTA ANUAL *********************/
+
+  // Agil
+  const lstMes = Array<string>();
+  const lstMain = new Array<Array<Number>>();
+
+    // Mant
+  const lstMes2 = Array<string>();
+  const lstMain2 = new Array<Array<Number>>();
+
+   // Agil/Mant
+   let dataColouredBarsChart: any;
+  let dataColouredBarsChart2: any;
+
+  // charts lineas 3 colores,
+  let lstPendientes = new Array<number>();
+  let lstResueltos = new Array<number>();
+  let lstingresados = new Array<number>();
+
+  let optionsColouredBarsChart: any;
+
+  this.data_api.getIncidenciasByYearA().subscribe((data) => {
+    data.forEach(function (value) {
+        lstMes.push(value.mes);
+        lstPendientes.push(value.pendientes);
+        lstResueltos.push(value.resueltos);
+        lstingresados.push(value.ingresados);
+      }
+    );
+    lstMain.push(lstPendientes);
+    lstMain.push(lstResueltos);
+    lstMain.push(lstingresados);
+    dataColouredBarsChart = {
+      labels: lstMes,
+      series: lstMain
+    };
+    //  Common Tasks
+    optionsColouredBarsChart = {
+      lineSmooth: Chartist.Interpolation.cardinal({
+          tension: 10
+      }),
+      axisY: {
+          showGrid: true,
+          offset: 40
+      },
+      axisX: {
+          showGrid: false,
+      },
+      low: 0,
+      high: 1000,
+      showPoint: true,
+      height: '300px'
+    };
+
+    const colouredBarsChart = new Chartist.Line('#colouredBarsChart', dataColouredBarsChart,
+    optionsColouredBarsChart);
+
+    this.chartFX.startAnimationForLineChart(colouredBarsChart);
+  });
+
+  const lstPendientes2 = new Array<number>();
+  const lstResueltos2 = new Array<number>();
+  const lstingresados2 = new Array<number>();
+
+  this.data_api.getIncidenciasByYearM().subscribe((data) => {
+
+    data.forEach(function (value) {
+        lstMes2.push(value.mes);
+        lstPendientes2.push(value.pendientes);
+        lstResueltos2.push(value.resueltos);
+        lstingresados2.push(value.ingresados);
       });
-   }
 
-   public tryJquery()
-   {
-     $$('#rowToogle').toggle('slow');
-   }
+      lstMain2.push(lstPendientes2);
+      lstMain2.push(lstResueltos2);
+      lstMain2.push(lstingresados2);
+      dataColouredBarsChart2 = {
+        labels: lstMes2,
+        series: lstMain2
+      };
 
-   displayRef(name: HTMLHeadingElement) {
-      this.textoInicial = 'vengo de mi padre';
-    console.log(( < HTMLHeadingElement > name).innerHTML);
-  }
+      const colouredBarsChart2 = new Chartist.Line('#colouredBarsChart2', dataColouredBarsChart2,
+      optionsColouredBarsChart);
 
+      this.chartFX.startAnimationForLineChart(colouredBarsChart2);
+    });
+}
    ngAfterViewInit() {
 
-      console.log(this.pRef.nativeElement.innerHTML);
+  ///////////////// FX TABLES /////////////////////
 
-       const breakCards = true;
-       if (breakCards === true) {
-           // We break the cards headers if there is too much stress on them :-)
-           $('[data-header-animation="true"]').each(function(){
-               const $fix_button = $(this);
-               const $card = $(this).parent('.card');
-               $card.find('.fix-broken-card').click(function(){
-                   const $header = $(this).parent().parent().siblings('.card-header, .card-image');
-                   $header.removeClass('hinge').addClass('fadeInDown');
+  $('#datatables').DataTable({
+    "pagingType": "full_numbers",
+    "lengthMenu": [
+      [10, 25, 50, -1],
+      [10, 25, 50, "All"]
+    ],
+    responsive: true,
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search records",
+    }
+  });
 
-                   $card.attr('data-count', 0);
+  const table = $('#datatables').dataTable();
 
-                   setTimeout(function(){
-                       $header.removeClass('fadeInDown animate');
-                   }, 480);
-               });
+    $('#datatables2').dataTable({
+      "pagingType": "full_numbers",
+      "lengthMenu": [
+        [10, 25, 50, -1],
+        [10, 25, 50, "All"]
+      ],
+      responsive: true,
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search records",
+      }
+    });
 
-               $card.mouseenter(function(){
-                   const $this = $(this);
-                   const hover_count = parseInt($this.attr('data-count'), 10) + 1 || 0;
-                   $this.attr('data-count', hover_count);
-                   if (hover_count >= 20) {
-                       $(this).children('.card-header, .card-image').addClass('hinge animated');
-                   }
-               });
-           });
-       }
+    $('#datatables3').dataTable({
+      "pagingType": "full_numbers",
+      "lengthMenu": [
+        [10, 25, 50, -1],
+        [10, 25, 50, "All"]
+      ],
+      responsive: true,
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search records",
+      }
+    });
+
+    $('.card .material-datatables label').addClass('form-group');
+
    }
 }
+

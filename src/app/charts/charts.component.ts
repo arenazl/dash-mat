@@ -8,6 +8,7 @@ import * as Chartist from 'chartist';
 })
 
 export class ChartsComponent implements OnInit {
+
     startAnimationForLineChart(chart: any) {
         let seq: number, delays: number, durations: number;
         seq = 0;
@@ -63,6 +64,7 @@ export class ChartsComponent implements OnInit {
 
         seq2 = 0;
     }
+    
     ngOnInit() {
         /* ----------==========    Rounded Line Chart initialization    ==========---------- */
 
@@ -153,9 +155,7 @@ export class ChartsComponent implements OnInit {
 
         this.startAnimationForLineChart(colouredRoundedLineChart);
 
-
         /*  **************** Coloured Rounded Line Chart - Line Chart ******************** */
-
 
         const dataColouredBarsChart = {
           labels: ['\'06', '\'07', '\'08', '\'09', '\'10', '\'11', '\'12', '\'13', '\'14', '\'15'],
