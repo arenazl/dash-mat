@@ -1,0 +1,67 @@
+[
+  {
+    "id_grupo": 0,
+    "grupo_desc": "Legajo Digital",
+    "cant": 140
+  },
+  {
+    "id_grupo": 1,
+    "grupo_desc": "BIP Sucursales",
+    "cant": 200
+  },
+  {
+    "id_grupo": 2,
+    "grupo_desc": "Tarjetas Debito",
+    "cant": 120
+  },
+  {
+    "id_grupo": 3,
+    "grupo_desc": "Tarjetas Credito",
+    "cant": 130
+  },
+  {
+    "id_grupo": 4,
+    "grupo_desc": "Bip/Bip Movil",
+    "cant": 200
+  },
+  {
+    "id_grupo": 5,
+    "grupo_desc": "Turnero",
+    "cant": 430
+  },
+  {
+    "id_grupo": 6,
+    "grupo_desc": "Gestionar",
+    "cant": 470
+  },
+  {
+    "id_grupo": 7,
+    "grupo_desc": "Cuentas y Plazos Fijo",
+    "cant": 500
+  },
+  {
+    "id_grupo": 8,
+    "grupo_desc": "Prestamos",
+    "cant": 600
+  },
+  {
+    "id_grupo": 9,
+    "grupo_desc": "Morax Emerix",
+    "cant": 650
+  },
+  {
+    "id_grupo": 10,
+    "grupo_desc": "ATM / IB",
+    "cant": 200
+  },
+  {
+    "id_grupo": 11,
+    "grupo_desc": "Firmas",
+    "cant": 100
+  },
+  {
+    "id_grupo": 12,
+    "grupo_desc": "Intranet",
+    "cant": 432
+  }
+]
