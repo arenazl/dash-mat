@@ -1,0 +1,44 @@
+[
+  {
+    "mes": "Enero",
+    "resueltos": 120,
+    "pendientes": 500,
+    "ingresados": 100
+  },
+  {
+    "mes": "Febrero",
+    "resueltos": 110,
+    "pendientes": 410,
+    "ingresados": 70
+  },
+  {
+    "mes": "Marzo",
+    "resueltos": 20,
+    "pendientes": 600,
+    "ingresados": 60
+  },
+  {
+    "mes": "Abril",
+    "resueltos": 50,
+    "pendientes": 540,
+    "ingresados": 200
+  },
+  {
+    "mes": "Mayo",
+    "resueltos": 120,
+    "pendientes": 390,
+    "ingresados": 10
+  },
+  {
+    "mes": "Junio",
+    "resueltos": 100,
+    "pendientes": 560,
+    "ingresados": 200
+  },
+  {
+    "mes": "Julio",
+    "resueltos": 120,
+    "pendientes": 270,
+    "ingresados": 5
+  }
+]

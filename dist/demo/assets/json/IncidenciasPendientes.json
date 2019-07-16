@@ -1,0 +1,464 @@
+[
+  {
+    "id_incidencia": 1,
+    "id_grupo": 1,
+    "grupo_desc": "analisis",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 2548784",
+    "fecha_creacion": "Mon Jun 28 1976 21:10:46 GMT+0000 (UTC)",
+    "fecha_cambio": "Wed Dec 12 2001 22:14:38 GMT+0000 (UTC)",
+    "usuario_asignado": "Luis suarez"
+  },
+  {
+    "id_incidencia": 2,
+    "id_grupo": 3,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 4564688",
+    "fecha_creacion": "Fri Oct 25 1974 03:45:40 GMT+0000 (UTC)",
+    "fecha_cambio": "Thu Oct 10 1974 04:37:02 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro tom"
+  },
+  {
+    "id_incidencia": 3,
+    "id_grupo": 1,
+    "grupo_desc": "infraesctructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 4546548",
+    "fecha_creacion": "Tue Mar 16 1982 13:59:56 GMT+0000 (UTC)",
+    "fecha_cambio": "Fri Jan 03 2014 04:30:08 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  },
+  {
+    "id_incidencia": 4,
+    "id_grupo": 1,
+    "grupo_desc": "infraesctructura",
+    "id_estado": 2,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 486525",
+    "fecha_creacion": "Thu Aug 12 2010 13:14:00 GMT+0000 (UTC)",
+    "fecha_cambio": "Sun Sep 16 1990 02:20:35 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  },
+  {
+    "id_incidencia": 5,
+    "id_grupo": 2,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 1126545",
+    "fecha_creacion": "Sat Oct 24 1992 23:11:08 GMT+0000 (UTC)",
+    "fecha_cambio": "Sun Nov 08 2009 09:25:28 GMT+0000 (UTC)",
+    "usuario_asignado": "Luis suarez"
+  },
+  {
+    "id_incidencia": 6,
+    "id_grupo": 1,
+    "grupo_desc": "Analisis",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 6984545",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 7,
+    "id_grupo": 1,
+    "grupo_desc": "Infraesctructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 7744165",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 8,
+    "id_grupo": 1,
+    "grupo_desc": "Proyectos",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 6655984",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 9,
+    "id_grupo": 1,
+    "grupo_desc": "Sin Asignar",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 2211456",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro Gomez"
+  }
+  ,
+  {
+    "id_incidencia": 10,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 87894174",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 11,
+    "id_grupo": 1,
+    "grupo_desc": "Analisis",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 4545678",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro Gomez"
+  }
+  ,
+  {
+    "id_incidencia": 12,
+    "id_grupo": 1,
+    "grupo_desc": "Creditos",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 33365545",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro Gomez"
+  }
+  ,
+  {
+    "id_incidencia": 13,
+    "id_grupo": 1,
+    "grupo_desc": "Tarjetas",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 45645675",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 14,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 454654",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 15,
+    "id_grupo": 1,
+    "grupo_desc": "Sucursales",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 45648",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro Gomez"
+  }
+  ,
+  {
+    "id_incidencia": 16,
+    "id_grupo": 1,
+    "grupo_desc": "BIP",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 45689",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro Gomez"
+  }
+  ,
+  {
+    "id_incidencia": 17,
+    "id_grupo": 1,
+    "grupo_desc": "BIP",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 454658",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Pedro Gomez"
+  }
+  ,
+  {
+    "id_incidencia": 18,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 3215648",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 19,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 489654",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 20,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 456454",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 21,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 5445645",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 22,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 4678426",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 23,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 354456",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 24,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 22145",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 25,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 44564788",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 26,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 4546478",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 27,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 456876",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 28,
+    "id_grupo": 1,
+    "grupo_desc": "Analisis",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 456875",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 29,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 56742",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 30,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 455125",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 31,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 7445000",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 32,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 30223400",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 33,
+    "id_grupo": 1,
+    "grupo_desc": "Infraestructura",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 44566",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Carlos Pompeya"
+  }
+  ,
+  {
+    "id_incidencia": 34,
+    "id_grupo": 1,
+    "grupo_desc": "Analisis",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 456465",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 35,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 3000",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 36,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 3000",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 37,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 3000",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 38,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 3000",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+  ,
+  {
+    "id_incidencia": 39,
+    "id_grupo": 1,
+    "grupo_desc": "Desarrollo",
+    "id_estado": 1,
+    "estado_desc": "pendiente",
+    "resumen": "Revisar CRQ 3000",
+    "fecha_creacion": "Sun Jul 29 2012 20:11:49 GMT+0000 (UTC)",
+    "fecha_cambio": "Sat Aug 21 2010 10:40:31 GMT+0000 (UTC)",
+    "usuario_asignado": "Lucas mall"
+  }
+]

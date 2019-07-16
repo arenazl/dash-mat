@@ -1,0 +1,67 @@
+[
+  {
+    "id_grupo": 0,
+    "grupo_desc": "Tesoreria",
+    "cant": 200
+  },
+  {
+    "id_grupo": 1,
+    "grupo_desc": "A2180",
+    "cant": 240
+  },
+  {
+    "id_grupo": 2,
+    "grupo_desc": "Corresponsales",
+    "cant": 300
+  },
+  {
+    "id_grupo": 3,
+    "grupo_desc": "Comercio Exterior",
+    "cant": 360
+  },
+  {
+    "id_grupo": 4,
+    "grupo_desc": "Contabilidad",
+    "cant": 400
+  },
+  {
+    "id_grupo": 5,
+    "grupo_desc": "Internet",
+    "cant": 20
+  },
+  {
+    "id_grupo": 6,
+    "grupo_desc": "Intranet",
+    "cant": 50
+  },
+  {
+    "id_grupo": 7,
+    "grupo_desc": "PAC",
+    "cant": 80
+  },
+  {
+    "id_grupo": 8,
+    "grupo_desc": "Incidentes",
+    "cant": 130
+  },
+  {
+    "id_grupo": 9,
+    "grupo_desc": "Impuestos",
+    "cant": 120
+  },
+  {
+    "id_grupo": 10,
+    "grupo_desc": "Convenios",
+    "cant": 680
+  },
+  {
+    "id_grupo": 11,
+    "grupo_desc": "Titulos",
+    "cant": 700
+  },
+  {
+    "id_grupo": 12,
+    "grupo_desc": "CRM",
+    "cant": 720
+  }
+]
